@@ -65,7 +65,7 @@ const maxAreaEfficient = (height) => {
   while (left < right) {
     const area = min(height[left], height[right]) * (right - left);
     maxArea = max(area, maxArea);
-    if (left < right) {
+    if (height[left] < height[right]) {
       left++
     } else {
       right--
