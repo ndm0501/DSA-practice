@@ -41,6 +41,9 @@ var twoSumBF = function (nums, target) {
   }
   return output
 };
+console.log(twoSumBF([2, 7, 11, 15], 9));
+console.log(twoSumBF([3, 2, 4], 6));
+console.log(twoSumBF([3, 3], 6));
 
 /*
   Solution 2
@@ -67,3 +70,35 @@ const twoSumEfficient = (nums, target) => {
 console.log(twoSumEfficient([2, 7, 11, 15], 9));
 console.log(twoSumEfficient([3, 2, 4], 6));
 console.log(twoSumEfficient([3, 3], 6));
+
+/*
+  Solution 3:
+  SC: O(1)
+  TC: O(n)
+  //two pointer technique for sorted arrays
+*/
+const twoSumTP = (nums, target) => {
+  let start = 0;
+  let end = nums.length - 1;
+  const numsSorted = nums.sort((a, b) => a - b);
+  const result = []
+
+  while (start < end) {
+    const sum = numsSorted[start] + numsSorted[end];
+    
+    if (sum == target) {
+      result.push(start)
+      result.push(end);
+      break;
+    } else if (sum > target) {
+      end--;
+    } else {
+      start++
+    }
+  }
+  return result;
+}
+
+console.log(twoSumTP([2, 7, 11, 15], 9));
+// console.log(twoSumTP([3, 2, 4], 6));
+console.log(twoSumTP([3, 3], 6));
