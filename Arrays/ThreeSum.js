@@ -18,3 +18,28 @@ Input: nums = [0]
 Output: []
 
 */
+
+//Incomplete
+// const threeSum = (nums) => {
+//     const nums_sort = nums.sort((a, b) => a - b);
+//     const result = [];
+//     if (nums.length < 3) return result;
+
+//     for (let i = 0; i < nums_sort.length - 2; i++) {
+//         let start = i + 1;
+//         let end = nums_sort.length - 1;
+//         while (start < end) {
+//             let sum = nums_sort[i] + nums_sort[start] + nums_sort[end];
+//             if (sum == 0) {
+//                 result.push([nums_sort[i], nums_sort[start], nums_sort[end]]);
+//                 break;
+//             } else if (sum > 0) {
+//                 end--;
+//             } else if (sum < 0) {
+//                 start++;
+//             }
+//         }
+//     }
+//     return result;
+// }
+// console.log(threeSum([-1, 0, 1, 2, -1, -4]));
