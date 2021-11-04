@@ -23,4 +23,4 @@ function binarySearch(arr, left, right, value){
 }
 const arr = [-1, 0, 1, 2, 3, 4, 7, 9, 10, 20];
 
-console.log(binarySearch(arr, 0, arr.length, 4))
+console.log(binarySearch(arr, 0, arr.length, 10))
