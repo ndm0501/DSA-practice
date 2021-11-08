@@ -23,7 +23,7 @@ function firstOccurrence(arr, target){
     return result;
 }
 
-let arr= [2, 4, 5, 10, 10, 10, 16, 20 ]
-let target= 16
+let arr= [2, 4, 5, 10, 10, 10, 16, 20 ];
+let target= 16;
 
 console.log(firstOccurrence(arr, target));
