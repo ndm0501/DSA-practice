@@ -4,13 +4,19 @@ return first pair that sums to 0
 */
 
 const sumZero = (array) => {
-  const sum = 0;
-  const pointer1 = 0;
-  const pointer2 = array.length-1;
+  let left = 0;
+  let right = array.length - 1;
 
-  for(let i=pointer1; i<=pointer2; i++){
-    if(array[pointer1] + array[pointer2] === 0 ){
-      return [pointer1, pointer2];
-    }else if()
+  while (left < right) {
+    let sum = array[left] + array[right]
+    if (sum === 0) {
+      return [array[left], array[right]];
+    } else if (sum > 0) {
+      right--
+    } else {
+      left++
+    }
   }
+  return [];
 }
+console.log(sumZero([-1,0,2]))
