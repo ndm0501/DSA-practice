@@ -17,9 +17,14 @@ Space - O(n)
 function areThereDuplicates(...array) {
     // good luck. (supply any arguments you deem necessary.)
     let i = 0, j = 1;
-    array = array.sort((a,b)=> a.charCodeAt(0) - b.charCodeAt(0));
+    array = array.sort((a, b) => {
+        if (typeof a === 'string' && typeof b === 'string') {
+            return a.charCodeAt(0) - b.charCodeAt(0);
+        } else {
+            return a - b;
+        }
+    });
 
-    console.log(array)
     while (j < array.length) {
         if (array[i] !== array[j]) {
             i++;
@@ -28,7 +33,9 @@ function areThereDuplicates(...array) {
         j++;
     }
 
-    return i !== array.length-1;
+    return i !== array.length - 1;
 }
 
 console.log(areThereDuplicates('a', 'b', 'c', 'a'))
+console.log(areThereDuplicates(1,2,3,2))
+console.log(areThereDuplicates(1, 2, 3))
